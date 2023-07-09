@@ -23,7 +23,7 @@
         <a class="nav-link" href="universidad.php">Universidades</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link" href="#">Salones</a>
+        <a class="nav-link" href="salones.php">Salones</a>
     </li>
     <li class="nav-item">
         <a class="nav-link disabled" href="#">Git</a>
