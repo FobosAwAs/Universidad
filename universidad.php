@@ -60,7 +60,36 @@
         <button class="btn btn-success">Guardar</button>
         </div>
 
-       
+        <div id="alertMessage" class="alert alert-success d-none">Los datos se guardaron correctamente.
+        <script>
+    $(document).ready(function() {
+        $('form').submit(function(event) {
+            event.preventDefault(); // Evita el envío del formulario de forma tradicional
+
+            var form = $(this);
+            var url = form.attr('action');
+            var formData = form.serialize();
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                success: function(response) {
+                    // Muestra el mensaje de alerta
+                    alert('Los datos se guardaron correctamente.');
+
+                    // Borra los valores de los campos de entrada
+                    form.find('input').val('');
+                },
+                error: function() {
+                    // Maneja el caso de error en la petición AJAX
+                    alert('Error al guardar los datos.');
+                }
+            });
+        });
+    });
+</script>
+        </div>
 
         </form>
     </div>
