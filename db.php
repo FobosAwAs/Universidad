@@ -23,6 +23,20 @@ class DB {
         }
     }
 
+    public function readUniversidad() {
+        $sql = "SELECT * FROM universidades";
+        
+        $result = mysqli_query($this->conn, $sql);
+        
+        if ($result) {
+            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            return $data;
+        } else {
+            echo 'Error al listar: ' . mysqli_error($this->conn);
+            return null;
+        }
+    }
+
     public function closeConnection() {
         mysqli_close($this->conn);
     }

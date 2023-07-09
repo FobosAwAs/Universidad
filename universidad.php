@@ -2,6 +2,13 @@
 
 <?php include("includes/header.php")?>
 
+<?php
+  $leerURL = 'leeruniversidad.php'; // URL a la clase PHP para "Leer"
+  $eliminarURL = 'clase2.php'; // URL a la clase PHP para "Eliminar"
+  $editarURL = 'clase3.php'; // URL a la clase PHP para "Editar"
+  include 'includes/button.php';
+  ?>
+
 <div class="container d-flex justify-content-center p-4">
     <div class="w-100" style="max-width: 1200px;">
         <form action="servicioUniversidad.php" method="post">
