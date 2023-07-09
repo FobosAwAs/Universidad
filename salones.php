@@ -16,7 +16,7 @@
       var tipoSalonContainer = document.getElementById("tipoSalonContainer");
       var tipoSalonSelect = document.getElementById("inputGroupSelect02");
 
-      tipoSalonContainer.style.display = "block"; // Mostrar el contenedor de tipo de salón
+      tipoSalonContainer.style.display = "flex"; // Mostrar el contenedor de tipo de salón
 
       // Limpiar las opciones existentes
       tipoSalonSelect.innerHTML = "";
