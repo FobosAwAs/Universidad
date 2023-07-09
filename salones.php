@@ -71,24 +71,7 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
           </div>
           <input type="text" class="form-control" name="name" aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm">
-        </div>
-        <!-- input NIT universidad -->
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">NIT universidad</span>
-          </div>
-          <input type="text" class="form-control" name="direccion" aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm">
-        </div>
-
-        <!-- input nombre -->
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-sm">Nombre</span>
-          </div>
-          <input type="text" class="form-control" name="name" aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm">
+            aria-describedby="inputGroup-sizing-sm" minlength="1" maxlength="10" required>
         </div>
 
         <!-- input NIT universidad -->
@@ -97,7 +80,7 @@
             <span class="input-group-text" id="inputGroup-sizing-sm">NIT universidad</span>
           </div>
           <input type="text" class="form-control" name="direccion" aria-label="Small"
-            aria-describedby="inputGroup-sizing-sm">
+            aria-describedby="inputGroup-sizing-sm" minlength="1" maxlength="11" pattern="[0-9]+" required>
         </div>
 
         <!-- input categoría -->
@@ -105,7 +88,7 @@
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" onchange="handleCategoryChange(this.value)">
+          <select class="custom-select" id="inputGroupSelect01" onchange="handleCategoryChange(this.value)" required>
             <option value="" selected disabled hidden>Seleccione...</option>
             <option value="0">Estandar</option>
             <option value="1">Auditorio</option>
@@ -116,7 +99,7 @@
         <!-- input tipo de salón -->
         <div class="input-group mb-3" id="tipoSalonContainer" style="display: none;">
           <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect02">Tipo de salón</label>
+            <label class="input-group-text" for="inputGroupSelect02" style="max-width: 130px;">Tipo de salón</label>
           </div>
           <select class="custom-select" id="inputGroupSelect02">
             <!-- Opciones de tipo de salón se generarán dinámicamente -->
