@@ -2,7 +2,7 @@
 
 <?php include("includes/header.php") ?>
 
-<form>
+
   <!-- Select your favorite fruit:
   <select id="mySelect">
     <option value="apple">Apple</option>
@@ -21,7 +21,7 @@
       // Limpiar las opciones existentes
       tipoSalonSelect.innerHTML = "";
 
-      if (category === "0") {
+      if (category === "Estandar") {
         // Agregar opciones para salones estándar
         var option1 = document.createElement("option");
         option1.value = "Sencillo";
@@ -32,7 +32,7 @@
         option2.value = "Amoblado";
         option2.text = "Amoblado";
         tipoSalonSelect.add(option2);
-      } else if (category === "1") {
+      } else if (category === "Auditorio") {
         // Agregar opciones para salones de auditorio
         var option1 = document.createElement("option");
         option1.value = "Mediano";
@@ -43,7 +43,7 @@
         option2.value = "Grande";
         option2.text = "Grande";
         tipoSalonSelect.add(option2);
-      } else if (category === "2") {
+      } else if (category === "Videoconferencia") {
         // Agregar opciones para salones de videoconferencia
         var option1 = document.createElement("option");
         option1.value = "Sencillo";
@@ -64,7 +64,7 @@
   </script>
   <div class="container d-flex justify-content-center p-4">
     <div class="w-100" style="max-width: 1200px;">
-      <form action="repositoryUniversidad.php" method="post">
+      <form action="servicioSalones.php" method="post">
         <!-- input nombre -->
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
@@ -79,7 +79,7 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">NIT universidad</span>
           </div>
-          <input type="text" class="form-control" name="direccion" aria-label="Small"
+          <input type="text" class="form-control" name="NIT" aria-label="Small"
             aria-describedby="inputGroup-sizing-sm" minlength="1" maxlength="11" pattern="[0-9]+" required>
         </div>
 
@@ -88,11 +88,11 @@
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect01">Categoría</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect01" onchange="handleCategoryChange(this.value)" required>
+          <select class="custom-select" name="category" id="inputGroupSelect01" onchange="handleCategoryChange(this.value)" required>
             <option value="" selected disabled hidden>Seleccione...</option>
-            <option value="0">Estandar</option>
-            <option value="1">Auditorio</option>
-            <option value="2">Videoconferencia</option>
+            <option value="Estandar">Estandar</option>
+            <option value="Auditorio">Auditorio</option>
+            <option value="Videoconferencia">Videoconferencia</option>
           </select>
         </div>
 
@@ -101,7 +101,7 @@
           <div class="input-group-prepend">
             <label class="input-group-text" for="inputGroupSelect02" style="max-width: 130px;">Tipo de salón</label>
           </div>
-          <select class="custom-select" id="inputGroupSelect02">
+          <select class="custom-select" name="type" id="inputGroupSelect02" required>
             <!-- Opciones de tipo de salón se generarán dinámicamente -->
           </select>
         </div>

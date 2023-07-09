@@ -23,6 +23,30 @@ class DB {
         }
     }
 
+    public function insertSalon($NIT, $name, $category, $type) {
+        $sql = "INSERT INTO salones(universidad_id,nombre,categoria,tipo) values ('$NIT', '$name', '$category','$type')";
+        
+        if (mysqli_query($this->conn, $sql)) {
+            echo 'Registro insertado exitosamente.';
+        } else {
+            echo 'Error al insertar el registro: ' . mysqli_error($this->conn);
+        }
+    }
+
+    public function readSalxUni($NIT){
+        $sql = "SELECT * FROM universidades WHERE NIT=$NIT";
+
+        $result = mysqli_query($this->conn, $sql);
+
+        if ($result) {
+            $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            return $data;
+        } else {
+            echo 'Error al listar: ' . mysqli_error($this->conn);
+            return null;
+        }
+    }
+
     public function readUniversidad() {
         $sql = "SELECT * FROM universidades";
         

@@ -26,7 +26,7 @@
         <a class="nav-link" href="salones.php">Salones</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link disabled" href="#">Git</a>
+        <a class="nav-link" href="salxuni.php">Mis salones</a>
     </li>
     </ul>
 
