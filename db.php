@@ -14,8 +14,19 @@ class DB {
     }
 
     public function insertUniversidad($nit, $name, $direccion, $email, $fecha, $telefono, $salones) {
-        $sql = "INSERT INTO universidades(nit, nombre, direccion, email, fecha, telefono, cant_salones) values ('$nit', '$name', '$direccion','$email', '$fecha' ,'$telefono','$salones')";
-        
+        // Verificar si el NIT o el nombre ya existen en la base de datos
+        $checkQuery = "SELECT COUNT(*) AS count FROM universidades WHERE nit = '$nit' OR nombre = '$name'";
+        $checkResult = mysqli_query($this->conn, $checkQuery);
+        $row = mysqli_fetch_assoc($checkResult);
+        if ($row['count'] > 0) {
+            echo 'Error: El NIT o el nombre ya están registrados.';
+            return;
+        }
+    
+        // Insertar el nuevo registro si el NIT y el nombre no están duplicados
+        $sql = "INSERT INTO universidades (nit, nombre, direccion, email, fecha, telefono, cant_salones) 
+                VALUES ('$nit', '$name', '$direccion', '$email', '$fecha', '$telefono', '$salones')";
+    
         if (mysqli_query($this->conn, $sql)) {
             echo 'Registro insertado exitosamente.';
         } else {
