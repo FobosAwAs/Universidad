@@ -45,7 +45,7 @@ class DB {
     }
 
     public function readSalxUni($NIT){
-        $sql = "SELECT * FROM universidades WHERE NIT=$NIT";
+        $sql = "SELECT * FROM salones WHERE universidad_id=$NIT";
 
         $result = mysqli_query($this->conn, $sql);
 

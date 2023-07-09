@@ -9,9 +9,12 @@
           <div class="input-group-prepend">
             <span class="input-group-text" id="inputGroup-sizing-sm">NIT universidad</span>
           </div>
-          <input type="text" class="form-control" name="NIT" aria-label="Small"
+          <input type="text" class="form-control" name="NIT" aria-label="Small" id="NIT"
             aria-describedby="inputGroup-sizing-sm" minlength="1" maxlength="11" pattern="[0-9]+" required>
         </div>
+
+        <script src="prueba.js"></script>
+
         <!-- btn Ver salones -->
         <div class="container d-flex justify-content-center">
         <button class="btn btn-success">Ver Salones</button>

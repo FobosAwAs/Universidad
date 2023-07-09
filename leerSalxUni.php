@@ -13,29 +13,23 @@
         <tr>
         <th scope="col">#NIT</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Dirección</th>
-        <th scope="col">Email</th>
-        <th scope="col">Fecha</th>
-        <th scope="col">Telefono</th>
-        <th scope="col">CanSalones</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Tipo</th>
         </tr>
     </thead>
     <tbody>
         <?php
+        $NIT = $_POST['NIT'];
             $db = new DB();
-            $universidades = $db->readSalxUni(1);
+            $salones = $db->readSalxUni($NIT);
         
-            if ($universidades) {
-                foreach ($universidades as $universidad) {
+            if ($salones) {
+                foreach ($salones as $salones) {
                     echo "<tr>";
-                    echo "<td>" . $universidad['nit'] . "</td>";
-                    echo "<td>" . $universidad['nombre'] . "</td>";
-                    echo "<td>" . $universidad['direccion'] . "</td>";
-                    echo "<td>" . $universidad['email'] . "</td>";
-                    echo "<td>" . $universidad['fecha'] . "</td>";
-                    echo "<td>" . $universidad['telefono'] . "</td>";
-                    echo "<td>" . $universidad['cant_salones'] . "</td>";
-                    echo "</tr>";
+                    echo "<td>" . $salones['universidad_id'] . "</td>";
+                    echo "<td>" . $salones['nombre'] . "</td>";
+                    echo "<td>" . $salones['categoria'] . "</td>";
+                    echo "<td>" . $salones['tipo'] . "</td>";
                 }
             } else {
                 echo "<tr><td colspan='7'>No se encontraron universidades</td></tr>";
